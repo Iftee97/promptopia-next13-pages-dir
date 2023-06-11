@@ -29,7 +29,7 @@ export default function Home({ prompts }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/prompt")
+  const res = await fetch(`${process.env.BASE_URL}/api/prompt`)
   const prompts = await res.json()
 
   return {

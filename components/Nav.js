@@ -5,7 +5,6 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react"
 
 export default function Nav() {
   const { data: session } = useSession()
-  // console.log('session: >>>>>>>>>', session)
 
   const [providers, setProviders] = useState(null)
   const [toggleDropdown, setToggleDropdown] = useState(false)
@@ -16,7 +15,6 @@ export default function Nav() {
 
   async function setInitialProviders() {
     const providers = await getProviders()
-    // console.log('providers: >>>>>>>>>', providers)
     setProviders(providers)
   }
 

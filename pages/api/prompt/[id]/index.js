@@ -22,7 +22,10 @@ export default async function handler(req, res) {
   // PATCH (update) prompt by id
   if (req.method === "PATCH") {
     try {
-      const { prompt, tag } = req.body
+      const {
+        prompt,
+        tag
+      } = req.body
       await connectToDb()
       const updatedPrompt = await Prompt.findByIdAndUpdate(
         id,

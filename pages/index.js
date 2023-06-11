@@ -2,7 +2,7 @@ import Head from "next/head"
 import Feed from "@/components/Feed"
 
 export default function Home({ prompts }) {
-  console.log("prompts SSR: >>>>>>>>>>", prompts)
+  // console.log("prompts SSR: >>>>>>>>>>", prompts)
 
   return (
     <>

@@ -2,8 +2,6 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { useSession, getSession } from "next-auth/react"
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import Form from "@/components/Form"
 
 export default function CreatePrompt() {
@@ -72,9 +70,7 @@ export default function CreatePrompt() {
 
 // SSR route guard
 export async function getServerSideProps(context) {
-  // const session = await getServerSession(context.req, context.res, authOptions)
   const session = await getSession(context)
-  console.log("server session: >>>>>>>>", session)
 
   if (!session) {
     return {
@@ -86,9 +82,6 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    // props: {
-    //   session,
-    // },
     props: {},
   }
 }

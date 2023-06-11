@@ -2,8 +2,6 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
 import { useSession, getSession } from "next-auth/react"
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "@/pages/api/auth/[...nextauth]"
 import Profile from "@/components/Profile"
 import Loading from "@/components/Loading"
 
@@ -76,9 +74,7 @@ export default function MyProfile() {
 
 // SSR route guard
 export async function getServerSideProps(context) {
-  // const session = await getServerSession(context.req, context.res, authOptions)
   const session = await getSession(context)
-  console.log("server session: >>>>>>>>", session)
 
   if (!session) {
     return {
@@ -90,9 +86,6 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    // props: {
-    //   session,
-    // },
     props: {},
   }
 }

@@ -1,0 +1,9 @@
+import { connectToDb } from "@/utils/database"
+import Prompt from "@/models/prompt"
+
+// GET all prompts
+export default async function handler(req, res) {
+  await connectToDb()
+  const prompts = await Prompt.find({}).populate("creator")
+  return res.status(200).json(prompts)
+}

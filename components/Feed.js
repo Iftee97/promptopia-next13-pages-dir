@@ -1,5 +1,5 @@
 import { useState } from "react"
-import PromptCard from "./PromptCard"
+import { PromptCard } from "@/components"
 
 export default function Feed({ allPosts }) {
   const [searchText, setSearchText] = useState("")

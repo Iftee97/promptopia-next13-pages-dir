@@ -1,4 +1,4 @@
-import PromptCard from "./PromptCard"
+import { PromptCard } from "@/components"
 
 export default function Profile({ name, description, data, handleEdit, handleDelete }) {
   return (

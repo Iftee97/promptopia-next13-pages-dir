@@ -2,7 +2,7 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { useSession, getSession } from "next-auth/react"
-import Form from "@/components/Form"
+import { Form } from "@/components"
 
 export default function CreatePrompt() {
   const router = useRouter()

@@ -2,8 +2,7 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
 import { useSession, getSession } from "next-auth/react"
-import Profile from "@/components/Profile"
-import Loading from "@/components/Loading"
+import { Profile, Loading } from "@/components"
 
 export default function MyProfile() {
   const router = useRouter()

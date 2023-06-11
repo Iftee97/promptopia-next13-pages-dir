@@ -75,7 +75,8 @@ export default function MyProfile() {
 }
 
 // SSR route guard
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions)
   console.log("server session: >>>>>>>>", session)
 

@@ -72,21 +72,22 @@ export default function CreatePrompt() {
 
 // SSR route guard
 // export async function getServerSideProps(context) {
-//   const session = await getServerSession(context.req, context.res, authOptions)
-//   console.log("server session: >>>>>>>>", session)
+export async function getStaticProps(context) {
+  const session = await getServerSession(context.req, context.res, authOptions)
+  console.log("server session: >>>>>>>>", session)
 
-//   if (!session) {
-//     return {
-//       redirect: {
-//         destination: "/",
-//         permanent: false,
-//       },
-//     }
-//   }
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    }
+  }
 
-//   return {
-//     props: {
-//       session,
-//     },
-//   }
-// }
+  return {
+    props: {
+      session,
+    },
+  }
+}

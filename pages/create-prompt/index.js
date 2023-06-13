@@ -68,20 +68,20 @@ export default function CreatePrompt() {
   )
 }
 
-// SSR route guard
-export async function getServerSideProps(context) {
-  const session = await getSession(context)
+// // SSR route guard -- not needed since we're using next-auth middleware
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context)
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    }
-  }
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     }
+//   }
 
-  return {
-    props: {},
-  }
-}
+//   return {
+//     props: {},
+//   }
+// }

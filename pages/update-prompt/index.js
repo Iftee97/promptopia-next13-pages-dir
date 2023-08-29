@@ -72,7 +72,7 @@ export default function UpdatePrompt() {
   return (
     <>
       <Head>
-        <title>Create Prompt | Promptopia-0</title>
+        <title>Edit Prompt | Promptopia-0</title>
       </Head>
 
       {loading ? (

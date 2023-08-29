@@ -2,7 +2,7 @@ import Head from "next/head"
 import { Feed } from "@/components"
 
 export default function Home({ prompts }) {
-  // console.log("prompts SSR: >>>>>>>>>>", prompts)
+  console.log("SSR prompts: >>>>>>>>>>", prompts)
 
   return (
     <>
@@ -34,7 +34,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      prompts,
+      prompts: prompts.reverse()
     },
   }
 }

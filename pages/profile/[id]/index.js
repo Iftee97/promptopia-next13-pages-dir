@@ -23,7 +23,7 @@ export default function OthersProfile() {
       const response = await fetch(`/api/users/${id}/prompts`)
       const { prompts } = await response.json()
       console.log("other user's prompts: >>>>>>>>>>", prompts)
-      setUserPosts(prompts)
+      setUserPosts(prompts.reverse())
     } catch (error) {
       console.log(error)
     } finally {

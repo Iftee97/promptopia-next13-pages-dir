@@ -23,7 +23,7 @@ export default function MyProfile() {
       const response = await fetch(`/api/users/${session.user.id}/prompts`)
       const { prompts } = await response.json()
       console.log("my prompts: >>>>>>>>>>", prompts)
-      setMyPosts(prompts)
+      setMyPosts(prompts.reverse())
     } catch (error) {
       console.log(error)
     } finally {
